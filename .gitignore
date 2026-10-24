@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+
+# Reportes generados por la herramienta: pueden contener hallazgos reales de un sitio.
+# Nunca deben subirse a un repositorio público.
+informe*.html
+informe*.json
+reporte*.html
+reporte*.json
