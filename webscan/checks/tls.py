@@ -6,6 +6,8 @@ import ssl
 from datetime import datetime, timezone
 from urllib.parse import urlparse
 
+import certifi
+
 from ..models import Finding, Severity
 from . import Context, register
 
@@ -17,7 +19,14 @@ def _handshake(host: str, port: int, version: ssl.TLSVersion | None, verify: boo
     ctx.check_hostname = verify
     ctx.verify_mode = ssl.CERT_REQUIRED if verify else ssl.CERT_NONE
     if verify:
-        ctx.load_default_certs()
+        # load_default_certs() depende del almacen de certificados del sistema operativo,
+        # que en Windows a veces no trae las CAs intermedias y da un falso "certificado invalido".
+        # certifi trae un paquete de CAs raiz mantenido y multiplataforma como respaldo confiable.
+        try:
+            ctx.load_default_certs()
+        except ssl.SSLError:
+            pass
+        ctx.load_verify_locations(cafile=certifi.where())
     if version is not None:
         ctx.minimum_version = version
         ctx.maximum_version = version
