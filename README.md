@@ -1,5 +1,9 @@
 # WebScan
 
+![Tests](https://github.com/MauExpl01t/webscan/actions/workflows/tests.yml/badge.svg)
+![Python](https://img.shields.io/badge/python-3.12-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+
 Proyecto personal de aprendizaje en ciberseguridad aplicada: herramienta de diagnóstico de seguridad web en Python, con dos modos:
 
 - **Pasivo** (por defecto): detecta errores de configuración y malas prácticas habituales (basado en OWASP Secure Headers / Top 10 A05) usando solo peticiones GET normales, sin enviar ningún payload.
