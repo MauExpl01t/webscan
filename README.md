@@ -11,6 +11,10 @@ Proyecto personal de aprendizaje en ciberseguridad aplicada: herramienta de diag
 
 > ⚠️ Analiza solo sistemas propios o con **autorización escrita**. El CLI exige `--i-have-authorization` y la web pide confirmarlo. El modo activo exige además `--active --i-accept-active-risk`: tu autorización debe cubrir explícitamente pruebas activas/intrusivas, no solo el diagnóstico pasivo.
 
+## Demo
+
+![Demo de WebScan](./assets/demo.svg)
+
 ## Instalación (Windows / PowerShell)
 
 ```powershell
